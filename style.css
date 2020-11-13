@@ -1,0 +1,15 @@
+
+body{
+    width: 1200px;
+    margin: auto;
+    background-color: antiquewhite;
+}
+
+img{
+    width: 500px;
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
