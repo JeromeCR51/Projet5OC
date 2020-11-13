@@ -1,5 +1,6 @@
 
 body{
+    text-align: center;
     width: 1200px;
     margin: auto;
     background-color: antiquewhite;
@@ -7,9 +8,12 @@ body{
 
 img{
     width: 500px;
-    text-align: center;
+}
+figure{
+    padding-bottom: 20px;
+}
+figcaption p{
+    text-transform: uppercase;
 }
 
-header{
-    text-align: center;
-}
+

@@ -20,20 +20,20 @@ request.onreadystatechange = function() {
       
       
       
-            //for (let camera of cameraList) { // Boucle pour chaque camera  présente dans la liste des cameras //
+            for (let camera of cameraList) { // Boucle pour chaque camera  présente dans la liste des cameras 
             const newArticleElt = document.createElement("div"); // je crée une balise div
             newArticleElt.className = "listcameras"; // je crée une classe dans la balise div //
             let titreclasslistcameras = document.createElement("H2"); // je crée une balise h2  // 
             
             let titreH2 = document.createTextNode(camera.name);   // je crée  un bloc de texte contenant le titre du h2 //
             let figure =  document.createElement("figure"); // je crée une balise figure //
-            let articleImage = document.createElement("IMG"); // je crée une balise image
+        
+            let articleImage = document.createElement("IMG"); // je crée une balise image //
             articleImage.src = camera.imageUrl; // je définis la propriéré SRC de l'image avec le contenu de l'imageUrl
             let figcaption = document.createElement("figcaption"); // je crée la balise figcaption //
-
-            let figcaptionpara = document.createElement('p');
-            let articlePrice = document.createTextNode(camera.price); // je crée un bloc texte contenant le prix de la camera //
-    
+            let figcaptionpara = document.createElement('p'); // je crée la balise paragraphe //
+            let articlePrice = document.createTextNode("prix" + " " + camera.price); // je crée un bloc texte contenant le prix de la camera //
+        
            
 
             titreclasslistcameras.appendChild(titreH2); // j'ajoute le titre h2 à la balise h2 // 
@@ -41,15 +41,14 @@ request.onreadystatechange = function() {
             figure.appendChild(articleImage); // j'ajoute l'image dans la balise figure //
             newArticleElt.appendChild(figure); // j'ajoute la balise figure à la div listcameras //
             (figure.appendChild)(figcaption); // j'ajoute la balise figcaption à la balise figure //
-
-            figcaption.appendChild(figcaptionpara);
+            figcaption.appendChild(figcaptionpara); // j'ajoute un paragraphe dans la balise figcaption // 
             figcaptionpara.appendChild(articlePrice); // j'ajoute le prix à la balise figcaptionpara //
             bodyElt.appendChild(newArticleElt); // j'ajoute l'article au body
             
 
             
 
-  //      }
+        }
     }
 };
 request.open("GET", "http://localhost:3000/api/cameras");
