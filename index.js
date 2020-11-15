@@ -6,6 +6,7 @@ request.onreadystatechange = function() {
         var cameraList = JSON.parse(this.responseText);
         console.log(cameraList);
 
+       
 
        
         let camera = cameraList[0];
