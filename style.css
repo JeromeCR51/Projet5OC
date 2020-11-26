@@ -5,7 +5,13 @@ body{
     margin: auto;
     background-color: antiquewhite;
 }
-
+header{
+    background-color: blueviolet;
+    border-radius: 50%;
+}
+main{
+    display: flex;
+}
 img{
     width: 500px;
 }
