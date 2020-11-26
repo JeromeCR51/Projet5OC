@@ -18,6 +18,7 @@ let textTitrePrincipal = document.createTextNode("ORINOCO"); // je crée  un blo
 let mainElt = document.createElement("main"); // je créé la balise main //
 
 bodyElt.appendChild(mainElt); // j'ajoute la balise main au body //
+
        
       
 for (let camera of cameraList) { // Boucle pour chaque camera  présente dans la liste des cameras //
@@ -42,13 +43,8 @@ for (let camera of cameraList) { // Boucle pour chaque camera  présente dans la
     newArticleElt.appendChild(figure); // j'ajoute la balise figure à la div listcameras //
     figure.appendChild(figcaption); // j'ajoute la balise figcaption à la balise figure //
            
-            
-
-mainElt.appendChild(newArticleElt);
-//bodyElt.appendChild(newArticleElt);  j'ajoute l'article au body //
-            
+    mainElt.appendChild(newArticleElt);               
         }
-        
     }
 };
 request.open("GET", "http://localhost:3000/api/cameras");

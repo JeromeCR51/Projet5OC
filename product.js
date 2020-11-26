@@ -3,7 +3,7 @@ function getAllUrlParams(url) {
     // obenir la chaine de requête de l'url  (optional) or window 
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
   
-    // stockage des paramètres ici
+    // je crée une boite vide ou l'on va stocker des paramètres ici
     var obj = {};
   
     // si la chaine de requête existe 
@@ -12,11 +12,11 @@ function getAllUrlParams(url) {
       // ce qui est après le # de la chaine de requête on oubli 
       queryString = queryString.split('#')[0];
   
-      // diviser la chaine de requête en ses composants 
+      // diviser la chaine de requête en ses composants  créé par un tableau 
       var arr = queryString.split('&');
   
       for (var i = 0; i < arr.length; i++) {
-        // séparations des clés et des valeurs
+        // séparations des clés et des valeurs du tableau arr 
         var a = arr[i].split('=');
   
         // définir le nom et la valeur du paramètre (utiliser "true" si vide )
