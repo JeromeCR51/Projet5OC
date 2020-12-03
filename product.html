@@ -15,21 +15,17 @@
         <header>     
         </header>
 
-        <form method="post" action="traitement.php">
+        <form method="post" action="">
+            <input type="hidden" name="id" id="idProduct" value="">
+            <p id="options"></p>
             <p>
                 <label for="number">Quantité</label>
-                <input type="number" name="number" id="number" min="1" max="10" value="1" checked>
+                <input type="number" name="number" id="qty" min="1" max="10" value="1" checked>
             </p>
 
+        
             <p>
-                <label for="acount">Total</label>
-                <input type="acount" name="acount" id="acount" required autocomplete="on">
-
-               
-            </p>
-
-            <p>
-                <input type="submit" value="Envoyer">
+                <input type="button" id="addToCart" value="Envoyer">
             </p>
         </form>
 

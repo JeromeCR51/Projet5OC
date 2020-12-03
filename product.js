@@ -98,7 +98,6 @@ request.onreadystatechange = function() {
         var selectList = document.createElement("select");
         selectList.name = "lense";
         selectList.id = "lense";
-        figcaption.appendChild(selectList);
         
         //Create and append the options
         for (let lense of camera.lenses) {
@@ -109,6 +108,11 @@ request.onreadystatechange = function() {
         }  
       
         var form = document.querySelector("form");
+        var formOptions = document.getElementById("options");
+        var formProductId = document.getElementById("idProduct");
+        formProductId.setAttribute("value", camera._id);
+        
+        formOptions.appendChild(selectList);      
         figcaption.appendChild(form);
 
 
@@ -122,7 +126,21 @@ request.onreadystatechange = function() {
 
         bodyElt.appendChild(newArticleElt); // j'ajoute l'article au body //
 
+        var addToCartElt = document.getElementById("addToCart");
+        addToCartElt.addEventListener("click", function () {
+          var qtyElt = document.getElementById("qty");
+          // je récupère dans localstorage le contenu pour vérifier si mon produit est déjà dans le panier
+          //si il est déjà dans le panier
+          //j'ajoute les quantités
+          //sinon
+          //je crée le produit dans localstorage avec la quantité
+          console.log(camera._id + " " + qtyElt.value);
+          window.alert("article " + camera.name + " ajouté au panier");
+       });
+       
     }
+    
+
 };
 
 request.open( "GET", "http://localhost:3000/api/cameras/" + id); 
