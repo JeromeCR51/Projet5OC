@@ -94,10 +94,6 @@ request.onreadystatechange = function() {
         hrefImage.href = "product.html?id=5be1ed3f1c9d44000030b061";
         let figcaption = document.createElement("figcaption"); // je crée la balise figcaption //
 
-       // let figcaptionpara = document.createElement('p'); // je crée la balise paragraphe //
-        //let articlePrice = document.createTextNode(camera.lenses[0] + " " + "Prix" + " " + camera.price); // je crée un bloc texte contenant le prix de la camera ////
-        //let figcaptionpara2 = document.createElement('p'); // je crée la balise paragraphe /
-        //let articlePrice2 = document.createTextNode(camera.lenses[1] + " " + "Prix" + " " + camera.price);//
         
         var selectList = document.createElement("select");
         selectList.name = "lense";
@@ -110,18 +106,19 @@ request.onreadystatechange = function() {
             option.value = lense;
             option.text = lense;
             selectList.appendChild(option);
-        }                
-     
+        }  
+      
+        var form = document.querySelector("form");
+        figcaption.appendChild(form);
+
+
+        
 
         figure.appendChild(hrefImage); // j'ajoute la balise <a> dans la balise figure //
         hrefImage.appendChild(articleImage); // j'ajoute l'image dans la balise  <a> //
         newArticleElt.appendChild(figure); // j'ajoute la balise figure à la div listcameras //
         (figure.appendChild)(figcaption); // j'ajoute la balise figcaption à la balise figure //
        
-        //figcaption.appendChild(figcaptionpara); // j'ajoute un paragraphe dans la balise figcaption // 
-        //figcaption.appendChild(figcaptionpara2);
-        //figcaptionpara.appendChild(articlePrice); // j'ajoute le prix à la balise figcaptionpara //
-        //figcaptionpara2.appendChild(articlePrice2); //
 
         bodyElt.appendChild(newArticleElt); // j'ajoute l'article au body //
 
@@ -132,3 +129,4 @@ request.open( "GET", "http://localhost:3000/api/cameras/" + id);
 request.send();
 
 }
+
